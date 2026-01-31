@@ -1,0 +1,19 @@
+---
+const SHOPEE_URL = 'https://shopee.co.th/narze';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Redirecting to Shopee...</title>
+		<meta http-equiv="refresh" content={`0; url=${SHOPEE_URL}`} />
+	</head>
+	<body>
+		<p>Redirecting to <a href={SHOPEE_URL}>Shopee</a>...</p>
+		<script define:vars={{ SHOPEE_URL }}>
+			window.location.href = SHOPEE_URL;
+		</script>
+	</body>
+</html>
