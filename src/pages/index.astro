@@ -1,18 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const taglines = [
+	'Crafting geeky goodness',
+	'Where nerds become artists',
+	'Tech meets craftsmanship',
+	'Built by geeks, for geeks',
+	'Code meets creativity',
+	'Engineering happiness',
+	'Making the impossible possible',
+	'Where logic meets magic',
+	'Crafted with bytes of love',
+	'The art of being geeky'
+];
 ---
 
 <Layout>
 	<div class="container">
 		<div class="content">
 			<h1 class="title">geekCraft()</h1>
-			<p class="bio">Crafting geeky goodness</p>
+			<p class="bio" id="bio"></p>
 			<a href="/shopee" class="button">
 				<span>🛒</span>
 				<span>Shop Now</span>
 			</a>
 		</div>
 	</div>
+
+	<script define:vars={{ taglines }}>
+		const bioElement = document.getElementById('bio');
+		const randomTagline = taglines[Math.floor(Math.random() * taglines.length)];
+		bioElement.textContent = randomTagline;
+	</script>
 </Layout>
 
 <style>
